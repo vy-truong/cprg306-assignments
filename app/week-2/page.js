@@ -1,4 +1,4 @@
-import Link from "next/link";
+
 import StudentInfo from "./student-info"; 
 
 export default function Page() {
@@ -7,7 +7,6 @@ export default function Page() {
         <h1>Shopping List</h1>
 
        <StudentInfo/> 
-       {/* <Link href="../">Back</Link> */}
         
       </main>
     );
