@@ -22,7 +22,7 @@ export default function NewItem(){
             category: category, 
         };
 
-        alert(`Added item: ${newitem.name} \nQuantity: ${newitem.quantity} \nCategory: ${newitem.category}`);
+        alert(`Added item: ${item.name} \nQuantity: ${item.quantity} \nCategory: ${item.category}`);
 
         //reset
         setName("");
@@ -32,18 +32,18 @@ export default function NewItem(){
 
     return(
         <main style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', backgroundColor: '#f0f0f0' }}>
-            <form onSubmit={handleSubmit} style={{ padding: '20px', borderRadius: '8px', boxShadow: '0 0 10px rgba(0,0,0,0.1)' }}>
+            <form onSubmit={handleSubmit} style={{ backgroundColor: 'black', padding: '20px', borderRadius: '8px', boxShadow: '0 0 10px rgba(0,0,0,0.1)' }}>
                 <div style={{ marginBottom: '10px' }}>
                     <label style={{ display: 'block', marginBottom: '5px' }}>Item Name</label>
-                    <input required type="text" onChange={handleName} value={name} placeholder="Item name" style={{ width: '100%', padding: '8px', boxSizing: 'border-box' }} />
+                    <input required type="text" onChange={handleName} value={name} placeholder="Item name" style={{ width: '100%', padding: '8px', boxSizing: 'border-box', color: 'black' }} />
                 </div>
                 <div style={{ marginBottom: '10px' }}>
                     <label style={{ display: 'block', marginBottom: '5px' }}>Quantity</label>
-                    <input required type="number" onChange={handleQuantity} value={quantity} min="1" style={{ width: '100%', padding: '8px', boxSizing: 'border-box' }} />
+                    <input required type="number" onChange={handleQuantity} value={quantity} min="1" style={{ width: '100%', padding: '8px', boxSizing: 'border-box', color: 'black'}} />
                 </div>
                 <div style={{ marginBottom: '20px' }}>
                     <label style={{ display: 'block', marginBottom: '5px' }}>Category</label>
-                    <select onChange={handleCategory} value={category} style={{ width: '100%', padding: '8px', boxSizing: 'border-box' }}>
+                    <select onChange={handleCategory} value={category} style={{ width: '100%', padding: '8px', boxSizing: 'border-box', color: 'black' }}>
                         <option value="produce">Select product category</option>
                         <option value="dairy">Dairy</option>
                         <option value="bakery">Bakery</option>
