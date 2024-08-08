@@ -1,23 +1,25 @@
 "use client";
-
-import React, { useState } from 'react';
-import NewItem from './new-item';
-import ItemList from './item-list';
+import { useState } from "react";
+import NewItem from "./new-item";
+import ItemList from "./item-list";
 import itemsData from './items.json';
 
-const Page = () => {
-  const [items, setItems] = useState(itemsData);
+export default function Page() {
+    const [items, setItems] = useState(itemsData);
 
-  const handleAddItem = (newItem) => {
-    setItems([...items, newItem]);
-  };
+    const handleAddItem = (item) => {
+        setItems([...items, item]);
+    };
 
-  return (
-    <div>
-      <NewItem onAddItem={handleAddItem} />
-      <ItemList items={items} />
-    </div>
-  );
-};
-
-export default Page;
+    return (
+        <main className="flex flex-col items-center justify-center min-h-screen bg-gray-900 p-6">
+            <h1 className="text-4xl font-bold mb-4 text-white">Shopping List</h1>
+            <div className="w-full max-w-md mb-8">
+                <NewItem onAddItem={handleAddItem} />
+            </div>
+            <div className="w-full max-w-4xl">
+                <ItemList items={items} />
+            </div>
+        </main>
+    );
+}
