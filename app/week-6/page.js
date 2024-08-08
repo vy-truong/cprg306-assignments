@@ -1,14 +1,23 @@
-// In page.js, create a functional component named Page that returns a main element wrapped around an h1 "Shopping List" header and the ItemList component.
+"use client";
 
-import ItemList from "./item-list";
+import React, { useState } from 'react';
+import NewItem from './new-item';
+import ItemList from './item-list';
+import itemsData from './items.json';
 
+const Page = () => {
+  const [items, setItems] = useState(itemsData);
 
-export default function Page() {
-    return (
-        <main className="p-6 min-h-screen bg-white">
-            <h1 className="text-4xl font-bold mb-4 text-dark-blue">Shopping List</h1>
-            <ItemList/>
-            
-        </main>
-    );
-}
+  const handleAddItem = (newItem) => {
+    setItems([...items, newItem]);
+  };
+
+  return (
+    <div>
+      <NewItem onAddItem={handleAddItem} />
+      <ItemList items={items} />
+    </div>
+  );
+};
+
+export default Page;
